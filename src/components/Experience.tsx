@@ -1,51 +1,90 @@
+import { useState } from 'react'
 import { resumeData } from '../data/resume'
-import { Briefcase } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export default function Experience() {
+  const [activeTab, setActiveTab] = useState(0)
+  const { ref, visible } = useScrollReveal()
+
   return (
-    <section id="experience" className="py-24 px-6 bg-[var(--color-surface-light)]/30">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2">
-          <span className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-            工作經歷
-          </span>
-        </h2>
-        <div className="w-16 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] rounded-full mb-12" />
+    <section ref={ref} id="experience" className={`max-w-[700px] mx-auto px-6 md:px-12 section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
+      <h2 className="section-heading numbered-heading-02">工作經歷</h2>
 
-        <div className="relative">
-          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-primary)]/50 to-transparent hidden md:block" />
+      <div className="flex flex-col md:flex-row gap-0">
+        <div
+          className="relative flex md:flex-col overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l-2 border-[var(--color-navy-lighter)]"
+          role="tablist"
+        >
+          {resumeData.experience.map((exp, i) => (
+            <button
+              key={i}
+              role="tab"
+              aria-selected={activeTab === i}
+              onClick={() => setActiveTab(i)}
+              className={`px-5 py-3 text-[13px] text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 -mb-[2px] md:mb-0 md:-ml-[2px] transition-all duration-300 cursor-pointer ${
+                activeTab === i
+                  ? 'text-[var(--color-green)] border-[var(--color-green)] bg-[var(--color-navy-light)]'
+                  : 'text-[var(--color-slate-mid)] border-transparent hover:text-[var(--color-green)] hover:bg-[var(--color-navy-light)]'
+              }`}
+              style={{ fontFamily: 'var(--font-mono)' }}
+            >
+              {exp.company}
+            </button>
+          ))}
+        </div>
 
-          <div className="space-y-12">
-            {resumeData.experience.map((exp, i) => (
-              <div key={i} className="relative md:pl-16">
-                <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[var(--color-primary)]/10 border-2 border-[var(--color-primary)] flex items-center justify-center hidden md:flex">
-                  <Briefcase size={16} className="text-[var(--color-primary-light)]" />
-                </div>
+        <div className="pt-3 md:pt-1 md:pl-8 min-h-[320px]">
+          {resumeData.experience.map((exp, i) => (
+            <div
+              key={i}
+              className={`${activeTab === i ? 'block' : 'hidden'}`}
+              role="tabpanel"
+            >
+              <h3 className="text-xl text-[var(--color-slate-lightest)] font-medium mb-1">
+                {exp.role}
+                <span className="text-[var(--color-green)]">
+                  {' @ '}
+                  <a
+                    href={exp.url}
+                    className="text-[var(--color-green)] hover:underline decoration-[var(--color-green)] underline-offset-4"
+                  >
+                    {exp.company}
+                  </a>
+                </span>
+              </h3>
 
-                <div className="p-6 rounded-xl bg-[var(--color-surface-light)] border border-slate-700/50 hover:border-[var(--color-primary)]/30 transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">{exp.company}</h3>
-                      <p className="text-[var(--color-primary-light)] font-medium">{exp.role}</p>
-                    </div>
-                    <div className="text-sm text-slate-400 mt-2 md:mt-0 md:text-right">
-                      <p>{exp.period}</p>
-                      <p>{exp.location}</p>
-                    </div>
-                  </div>
+              <p
+                className="text-[13px] text-[var(--color-slate-mid)] mb-6"
+                style={{ fontFamily: 'var(--font-mono)' }}
+              >
+                {exp.period}
+              </p>
 
-                  <ul className="space-y-2">
-                    {exp.highlights.map((h, j) => (
-                      <li key={j} className="flex items-start gap-3 text-slate-300">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <ul className="space-y-3 mb-6 list-none p-0">
+                {exp.highlights.map((item, j) => (
+                  <li
+                    key={j}
+                    className="relative pl-6 text-[var(--color-slate-mid)] text-[15px] leading-relaxed"
+                  >
+                    <span className="absolute left-0 text-[var(--color-green)]">▹</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2">
+                {exp.techs.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 text-[12px] rounded-full bg-[var(--color-green-tint)] text-[var(--color-green)]"
+                    style={{ fontFamily: 'var(--font-mono)' }}
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

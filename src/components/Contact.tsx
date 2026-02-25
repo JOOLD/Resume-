@@ -1,72 +1,34 @@
 import { resumeData } from '../data/resume'
-import { Mail, MapPin, Github, Linkedin } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export default function Contact() {
+  const { ref, visible } = useScrollReveal()
+
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2">
-          <span className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-            聯繫方式
-          </span>
-        </h2>
-        <div className="w-16 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] rounded-full mb-12" />
+    <section ref={ref} id="contact" className={`max-w-[600px] mx-auto px-6 md:px-12 text-center section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
+      <p
+        className="text-[var(--color-green)] text-[16px] mb-4"
+        style={{ fontFamily: 'var(--font-mono)' }}
+      >
+        04. 接下來？
+      </p>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-          <a
-            href={`mailto:${resumeData.email}`}
-            className="flex items-center gap-4 p-5 rounded-xl bg-[var(--color-surface-light)] border border-slate-700/50 hover:border-[var(--color-primary)]/50 transition-all duration-300 hover:-translate-y-1 group"
-          >
-            <div className="w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)] group-hover:bg-[var(--color-primary)]/20 transition-colors">
-              <Mail size={22} />
-            </div>
-            <div>
-              <p className="text-sm text-slate-400">Email</p>
-              <p className="text-white font-medium">{resumeData.email}</p>
-            </div>
-          </a>
+      <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-[var(--color-slate-lightest)] mb-4">
+        與我聯繫
+      </h2>
 
-          <div className="flex items-center gap-4 p-5 rounded-xl bg-[var(--color-surface-light)] border border-slate-700/50">
-            <div className="w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)]">
-              <MapPin size={22} />
-            </div>
-            <div>
-              <p className="text-sm text-slate-400">Location</p>
-              <p className="text-white font-medium">{resumeData.location}</p>
-            </div>
-          </div>
+      <p className="text-[var(--color-slate-mid)] text-lg leading-relaxed mb-12">
+        我目前正在尋找新的機會。無論你有任何問題、合作提案，或只是想打個招呼，
+        我都很樂意收到你的來信！
+      </p>
 
-          <a
-            href={resumeData.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-5 rounded-xl bg-[var(--color-surface-light)] border border-slate-700/50 hover:border-[var(--color-primary)]/50 transition-all duration-300 hover:-translate-y-1 group"
-          >
-            <div className="w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)] group-hover:bg-[var(--color-primary)]/20 transition-colors">
-              <Github size={22} />
-            </div>
-            <div>
-              <p className="text-sm text-slate-400">GitHub</p>
-              <p className="text-white font-medium">GitHub Profile</p>
-            </div>
-          </a>
-
-          <a
-            href={resumeData.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-5 rounded-xl bg-[var(--color-surface-light)] border border-slate-700/50 hover:border-[var(--color-primary)]/50 transition-all duration-300 hover:-translate-y-1 group"
-          >
-            <div className="w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)] group-hover:bg-[var(--color-primary)]/20 transition-colors">
-              <Linkedin size={22} />
-            </div>
-            <div>
-              <p className="text-sm text-slate-400">LinkedIn</p>
-              <p className="text-white font-medium">LinkedIn Profile</p>
-            </div>
-          </a>
-        </div>
-      </div>
+      <a
+        href={`mailto:${resumeData.email}`}
+        className="inline-block px-8 py-4 border border-[var(--color-green)] text-[var(--color-green)] rounded text-[14px] hover:bg-[var(--color-green-tint)] transition-all duration-300"
+        style={{ fontFamily: 'var(--font-mono)' }}
+      >
+        Say Hello
+      </a>
     </section>
   )
 }

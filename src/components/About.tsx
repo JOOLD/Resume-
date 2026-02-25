@@ -1,54 +1,52 @@
 import { resumeData } from '../data/resume'
-import { Code2, Building2, Rocket } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const highlights = [
-  {
-    icon: <Building2 size={24} />,
-    title: '金融科技經驗',
-    desc: '富邦金控兩年半實戰經驗',
-  },
-  {
-    icon: <Code2 size={24} />,
-    title: '架構現代化',
-    desc: 'XSL 遺留系統翻新為 Angular',
-  },
-  {
-    icon: <Rocket size={24} />,
-    title: 'SaaS 產品開發',
-    desc: '獨立開發全端 SaaS 平台',
-  },
+const highlightSkills = [
+  'JavaScript (ES6+)',
+  'TypeScript',
+  'Angular',
+  'React',
+  'N8N',
+  'LINE Bot',
 ]
 
 export default function About() {
-  return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2">
-          <span className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-            關於我
-          </span>
-        </h2>
-        <div className="w-16 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] rounded-full mb-12" />
+  const { ref, visible } = useScrollReveal()
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {highlights.map((item, i) => (
-            <div
-              key={i}
-              className="p-6 rounded-xl bg-[var(--color-surface-light)] border border-slate-700/50 hover:border-[var(--color-primary)]/50 transition-all duration-300 hover:-translate-y-1 group"
-            >
-              <div className="w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)] mb-4 group-hover:bg-[var(--color-primary)]/20 transition-colors">
-                {item.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-1">{item.title}</h3>
-              <p className="text-slate-400 text-sm">{item.desc}</p>
-            </div>
+  return (
+    <section ref={ref} id="about" className={`max-w-[900px] mx-auto px-6 md:px-12 section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
+      <h2 className="section-heading numbered-heading-01">關於我</h2>
+
+      <div className="grid md:grid-cols-[3fr_2fr] gap-12">
+        <div className="space-y-4 text-[var(--color-slate-mid)] text-[16px]">
+          {resumeData.about.map((p, i) => (
+            <p key={i}>{p}</p>
           ))}
+
+          <p className="mt-6 text-[var(--color-slate-light)]">以下是我近期主要使用的技術：</p>
+
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-4 list-none p-0">
+            {highlightSkills.map((skill) => (
+              <li
+                key={skill}
+                className="relative pl-5 text-[13px] text-[var(--color-slate-mid)]"
+                style={{ fontFamily: 'var(--font-mono)' }}
+              >
+                <span className="absolute left-0 text-[var(--color-green)]">▹</span>
+                {skill}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="space-y-4 text-slate-300 leading-relaxed max-w-4xl">
-          {resumeData.about.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
+        <div className="relative group mx-auto md:mx-0">
+          <div className="relative w-[250px] h-[250px] rounded overflow-hidden z-10">
+            <div className="absolute inset-0 bg-[var(--color-green)]/20 hover:bg-transparent transition-all duration-300 z-20" />
+            <div className="w-full h-full bg-[var(--color-navy-lighter)] flex items-center justify-center">
+              <span className="text-8xl font-bold select-none" style={{ color: 'rgba(100, 255, 218, 0.3)' }}>JC</span>
+            </div>
+          </div>
+          <div className="absolute top-[15px] left-[15px] w-[250px] h-[250px] border-2 border-[var(--color-green)] rounded z-0 transition-all duration-300 group-hover:top-[10px] group-hover:left-[10px]" />
         </div>
       </div>
     </section>
