@@ -1,7 +1,7 @@
 export const resumeData = {
   name: '張哲銓',
   nameEn: 'Jesper',
-  title: 'Front-End Developer',
+  title: 'Full-Stack Developer & SaaS Builder',
   email: 'h7110231@gmail.com',
   portfolio: 'https://leadionai.zeabur.app/',
   linkedin: 'https://linkedin.com/in/yourusername',
@@ -55,30 +55,46 @@ export const resumeData = {
     },
   ],
 
-  skills: [
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'Vue 3',
-    'Angular',
-    'React',
-    'Node.js',
-    'Express',
-    'Pinia',
-    'N8N',
-    'LINE Bot',
-    'Telegram Bot',
-    'OpenClaw',
-    'HTML & CSS/SCSS',
-    'Tailwind CSS',
-    'RxJS',
-    'PostgreSQL',
-    'Redis',
-    'Google Gemini',
-    'Docker',
-    'Git',
-    'Zeabur',
-    'REST API Design',
+  skillCategories: [
+    {
+      category: '前端開發',
+      icon: 'layout',
+      skills: ['Vue 3', 'Angular', 'React', 'TypeScript', 'JavaScript (ES6+)', 'Pinia', 'RxJS', 'Tailwind CSS', 'HTML & CSS/SCSS'],
+    },
+    {
+      category: '後端開發',
+      icon: 'server',
+      skills: ['Node.js', 'Express', 'PostgreSQL', 'Redis', 'REST API Design'],
+    },
+    {
+      category: 'AI / 自動化',
+      icon: 'cpu',
+      skills: ['Google Gemini', 'N8N', 'LINE Bot', 'Telegram Bot', 'OpenClaw'],
+    },
+    {
+      category: 'DevOps',
+      icon: 'cloud',
+      skills: ['Docker', 'Git', 'Zeabur'],
+    },
   ],
+
+  featuredProject: {
+    name: 'Leadion AI',
+    subtitle: 'AI 驅動數位行銷 SaaS 平台',
+    url: 'https://leadionai.zeabur.app/',
+    description:
+      '獨立設計開發的完整 SaaS 平台，整合 AI 合成用戶市場調查、電商工具套件、SEO 分析等功能，從需求分析、架構設計到部署維運完整掌握產品全生命週期。',
+    screenshot: '/leadion-screenshot.png',
+    stats: [
+      { value: 27, suffix: '+', label: '頁面' },
+      { value: 50, suffix: '+', label: '元件' },
+      { value: 35, suffix: '+', label: 'API 路由' },
+      { value: 60, suffix: '', label: '並發支援' },
+      { value: 4, suffix: '', label: '國市場' },
+      { value: 3, suffix: '', label: '家金流' },
+    ],
+    techs: ['Vue 3', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Google Gemini', 'N8N', 'Zeabur'],
+  },
 
   education: [
     {

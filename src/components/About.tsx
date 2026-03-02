@@ -2,12 +2,12 @@ import { resumeData } from '../data/resume'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const highlightSkills = [
-  'JavaScript (ES6+)',
+  'Vue 3',
   'TypeScript',
-  'Angular',
-  'React',
+  'Node.js',
   'N8N',
-  'LINE Bot',
+  'Google Gemini',
+  'PostgreSQL',
 ]
 
 export default function About() {

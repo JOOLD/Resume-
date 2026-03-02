@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import FeaturedProject from './components/FeaturedProject'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Education from './components/Education'
@@ -19,6 +20,7 @@ function App() {
         <main className="max-w-[1600px] mx-auto">
           <Hero />
           <About />
+          <FeaturedProject />
           <Experience />
           <Skills />
           <Education />

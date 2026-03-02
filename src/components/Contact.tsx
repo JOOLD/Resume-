@@ -10,7 +10,7 @@ export default function Contact() {
         className="text-[var(--color-green)] text-[16px] mb-4"
         style={{ fontFamily: 'var(--font-mono)' }}
       >
-        04. 接下來？
+        05. 接下來？
       </p>
 
       <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-[var(--color-slate-lightest)] mb-4">

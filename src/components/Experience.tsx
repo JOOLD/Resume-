@@ -8,7 +8,7 @@ export default function Experience() {
 
   return (
     <section ref={ref} id="experience" className={`max-w-[700px] mx-auto px-6 md:px-12 section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
-      <h2 className="section-heading numbered-heading-02">工作經歷</h2>
+      <h2 className="section-heading numbered-heading-03">工作經歷</h2>
 
       <div className="flex flex-col md:flex-row gap-0">
         <div

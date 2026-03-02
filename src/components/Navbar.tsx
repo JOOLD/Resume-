@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 
 const navLinks = [
   { num: '01.', label: '關於我', href: '#about' },
-  { num: '02.', label: '經歷', href: '#experience' },
-  { num: '03.', label: '技能', href: '#skills' },
-  { num: '04.', label: '聯繫', href: '#contact' },
+  { num: '02.', label: '專案', href: '#featured' },
+  { num: '03.', label: '經歷', href: '#experience' },
+  { num: '04.', label: '技能', href: '#skills' },
+  { num: '05.', label: '聯繫', href: '#contact' },
 ]
 
 export default function Navbar() {

@@ -19,9 +19,9 @@ export default function Hero() {
       </h2>
 
       <p className="max-w-[540px] mt-8 text-[var(--color-slate-mid)] text-lg leading-relaxed animate-fade-in-up stagger-4">
-        專注於前端開發與 SaaS 產品打造。
-        擅長 N8N 自動化流程、LINE Bot / Telegram Bot 聊天機器人開發，
-        並具備獨立開發與營運完整產品的能力。
+        我打造從前端到後端的完整產品。目前獨立開發並營運
+        {' '}<a href="https://leadionai.zeabur.app/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-green)] hover:underline underline-offset-4">Leadion AI</a>{' '}
+        SaaS 平台，整合 AI、自動化與金流系統，服務跨國市場。
       </p>
 
       <div className="mt-12 animate-fade-in-up stagger-5">

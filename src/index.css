@@ -109,6 +109,7 @@
   .numbered-heading-02::before { content: '02.'; }
   .numbered-heading-03::before { content: '03.'; }
   .numbered-heading-04::before { content: '04.'; }
+  .numbered-heading-05::before { content: '05.'; }
 
   .scroll-reveal {
     opacity: 0;
