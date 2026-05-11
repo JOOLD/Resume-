@@ -9,32 +9,29 @@ import Contact from './components/Contact'
 import SideElements from './components/SideElements'
 import Footer from './components/Footer'
 import ParticleNetwork from './components/ParticleNetwork'
-import PrintResume from './components/PrintResume'
+import { LangProvider } from './i18n/LangContext'
 
 function App() {
-  const params = new URLSearchParams(window.location.search)
-  if (params.get('print') === 'en') {
-    return <PrintResume />
-  }
-
   return (
-    <div className="min-h-screen bg-[var(--color-navy)]">
-      <ParticleNetwork />
-      <div className="relative z-10">
-        <Navbar />
-        <SideElements />
-        <main className="max-w-[1600px] mx-auto">
-          <Hero />
-          <About />
-          <FeaturedProject />
-          <Experience />
-          <Skills />
-          <Education />
-          <Contact />
-        </main>
-        <Footer />
+    <LangProvider>
+      <div className="min-h-screen bg-[var(--color-navy)]">
+        <ParticleNetwork />
+        <div className="relative z-10">
+          <Navbar />
+          <SideElements />
+          <main className="max-w-[1600px] mx-auto">
+            <Hero />
+            <About />
+            <FeaturedProject />
+            <Experience />
+            <Skills />
+            <Education />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </LangProvider>
   )
 }
 

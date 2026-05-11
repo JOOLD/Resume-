@@ -1,4 +1,4 @@
-import { resumeData } from '../data/resume'
+import { useLang } from '../i18n/LangContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const icons: Record<string, React.ReactNode> = {
@@ -45,14 +45,15 @@ const icons: Record<string, React.ReactNode> = {
 }
 
 export default function Skills() {
+  const { t } = useLang()
   const { ref, visible } = useScrollReveal()
 
   return (
     <section ref={ref} id="skills" className={`max-w-[900px] mx-auto px-6 md:px-12 section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
-      <h2 className="section-heading numbered-heading-04">技術能力</h2>
+      <h2 className="section-heading numbered-heading-04">{t.ui.skillsTitle}</h2>
 
       <div className="grid md:grid-cols-2 gap-5">
-        {resumeData.skillCategories.map((cat) => (
+        {t.skillCategories.map((cat) => (
           <div
             key={cat.category}
             className="p-6 rounded-lg bg-[var(--color-navy-light)] border border-[var(--color-navy-lighter)] hover:border-[var(--color-green)]/40 transition-all duration-300 group"

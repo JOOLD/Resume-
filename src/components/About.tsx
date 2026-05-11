@@ -1,32 +1,24 @@
-import { resumeData } from '../data/resume'
+import { useLang } from '../i18n/LangContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const highlightSkills = [
-  'Vue 3',
-  'TypeScript',
-  'Node.js',
-  'N8N',
-  'Google Gemini',
-  'PostgreSQL',
-]
-
 export default function About() {
+  const { t } = useLang()
   const { ref, visible } = useScrollReveal()
 
   return (
     <section ref={ref} id="about" className={`max-w-[900px] mx-auto px-6 md:px-12 section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
-      <h2 className="section-heading numbered-heading-01">關於我</h2>
+      <h2 className="section-heading numbered-heading-01">{t.ui.aboutTitle}</h2>
 
       <div className="grid md:grid-cols-[3fr_2fr] gap-12">
         <div className="space-y-4 text-[var(--color-slate-mid)] text-[16px]">
-          {resumeData.about.map((p, i) => (
+          {t.about.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
 
-          <p className="mt-6 text-[var(--color-slate-light)]">以下是我近期主要使用的技術：</p>
+          <p className="mt-6 text-[var(--color-slate-light)]">{t.ui.aboutSubheading}</p>
 
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-4 list-none p-0">
-            {highlightSkills.map((skill) => (
+            {t.highlightSkills.map((skill) => (
               <li
                 key={skill}
                 className="relative pl-5 text-[13px] text-[var(--color-slate-mid)]"

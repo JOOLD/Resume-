@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react'
-
-const navLinks = [
-  { num: '01.', label: '關於我', href: '#about' },
-  { num: '02.', label: '專案', href: '#featured' },
-  { num: '03.', label: '經歷', href: '#experience' },
-  { num: '04.', label: '技能', href: '#skills' },
-  { num: '05.', label: '聯繫', href: '#contact' },
-]
+import { useLang } from '../i18n/LangContext'
 
 export default function Navbar() {
+  const { lang, setLang, t } = useLang()
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [lastY, setLastY] = useState(0)
@@ -24,6 +18,8 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [lastY])
+
+  const toggleLang = () => setLang(lang === 'en' ? 'zh' : 'en')
 
   return (
     <>
@@ -42,11 +38,11 @@ export default function Navbar() {
             href="#"
             className="text-[var(--color-green)] font-mono text-2xl font-bold hover:opacity-80 transition-opacity animate-fade-in"
           >
-            JK
+            JC
           </a>
 
-          <div className="hidden md:flex items-center gap-8 animate-fade-in">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex items-center gap-6 animate-fade-in">
+            {t.ui.navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -57,13 +53,16 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="?print=en"
-              className="px-4 py-2 border border-[var(--color-green)] text-[var(--color-green)] rounded text-[13px] hover:bg-[var(--color-green-tint)] transition-all"
+
+            <button
+              type="button"
+              onClick={toggleLang}
+              aria-label={t.ui.langToggleAriaLabel}
+              className="px-3 py-1.5 border border-[var(--color-slate-mid)] text-[var(--color-slate-light)] rounded text-[12px] hover:border-[var(--color-green)] hover:text-[var(--color-green)] transition-all"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              履歷 PDF
-            </a>
+              {t.ui.langToggleOther}
+            </button>
           </div>
 
           <button
@@ -93,7 +92,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
           />
           <aside className="absolute right-0 top-0 bottom-0 w-[min(75vw,400px)] bg-[var(--color-navy-light)] shadow-[-10px_0_30px_-15px_rgba(2,12,27,0.7)] flex flex-col items-center justify-center gap-8 p-12">
-            {navLinks.map((link) => (
+            {t.ui.navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -105,13 +104,17 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="?print=en"
+            <button
+              type="button"
+              onClick={() => {
+                toggleLang()
+                setMobileOpen(false)
+              }}
               className="mt-4 px-8 py-3 border border-[var(--color-green)] text-[var(--color-green)] rounded text-sm hover:bg-[var(--color-green-tint)] transition-all"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              履歷 PDF
-            </a>
+              {t.ui.langToggleOther}
+            </button>
           </aside>
         </div>
       )}

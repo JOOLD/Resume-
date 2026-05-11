@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { resumeData } from '../data/resume'
+import { useLang } from '../i18n/LangContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 function useCountUp(end: number, trigger: boolean, duration = 1500) {
@@ -47,12 +47,13 @@ function StatCard({ value, suffix, label, trigger }: {
 }
 
 export default function FeaturedProject() {
+  const { t } = useLang()
   const { ref, visible } = useScrollReveal()
-  const { featuredProject: project } = resumeData
+  const project = t.featuredProject
 
   return (
     <section ref={ref} id="featured" className={`max-w-[900px] mx-auto px-6 md:px-12 section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
-      <h2 className="section-heading numbered-heading-02">精選專案</h2>
+      <h2 className="section-heading numbered-heading-02">{t.ui.featuredTitle}</h2>
 
       <div className="relative rounded-lg bg-[var(--color-navy-light)] border border-[var(--color-navy-lighter)] overflow-hidden hover:border-[var(--color-green)]/30 transition-all duration-300">
         <div className="grid md:grid-cols-[1fr_1fr] gap-0">
@@ -79,7 +80,7 @@ export default function FeaturedProject() {
               className="text-[var(--color-green)] text-[13px] mb-2"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              Featured Project
+              {t.ui.featuredLabel}
             </p>
 
             <h3 className="text-2xl font-bold text-[var(--color-slate-lightest)] mb-1">
@@ -122,7 +123,7 @@ export default function FeaturedProject() {
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--color-green)] text-[var(--color-green)] rounded text-[13px] hover:bg-[var(--color-green-tint)] transition-all duration-300 w-fit"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              查看專案
+              {t.ui.featuredViewProject}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                 <polyline points="15 3 21 3 21 9" />

@@ -1,21 +1,22 @@
 import { useState } from 'react'
-import { resumeData } from '../data/resume'
+import { useLang } from '../i18n/LangContext'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export default function Experience() {
+  const { t } = useLang()
   const [activeTab, setActiveTab] = useState(0)
   const { ref, visible } = useScrollReveal()
 
   return (
     <section ref={ref} id="experience" className={`max-w-[700px] mx-auto px-6 md:px-12 section-padding scroll-reveal ${visible ? 'visible' : ''}`}>
-      <h2 className="section-heading numbered-heading-03">工作經歷</h2>
+      <h2 className="section-heading numbered-heading-03">{t.ui.experienceTitle}</h2>
 
       <div className="flex flex-col md:flex-row gap-0">
         <div
           className="relative flex md:flex-col overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l-2 border-[var(--color-navy-lighter)]"
           role="tablist"
         >
-          {resumeData.experience.map((exp, i) => (
+          {t.experience.map((exp, i) => (
             <button
               key={i}
               role="tab"
@@ -34,7 +35,7 @@ export default function Experience() {
         </div>
 
         <div className="pt-3 md:pt-1 md:pl-8 min-h-[320px]">
-          {resumeData.experience.map((exp, i) => (
+          {t.experience.map((exp, i) => (
             <div
               key={i}
               className={`${activeTab === i ? 'block' : 'hidden'}`}

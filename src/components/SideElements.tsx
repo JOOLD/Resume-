@@ -1,6 +1,7 @@
-import { resumeData } from '../data/resume'
+import { useLang } from '../i18n/LangContext'
 
 export default function SideElements() {
+  const { t: resumeData } = useLang()
   return (
     <>
       <div className="hidden xl:flex fixed bottom-0 left-10 flex-col items-center gap-6 z-40 animate-fade-in stagger-7">
