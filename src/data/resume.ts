@@ -4,12 +4,13 @@ export const resumeData = {
   title: 'Full-Stack Developer & SaaS Builder',
   email: 'h7110231@gmail.com',
   portfolio: 'https://leadionai.zeabur.app/',
-  linkedin: 'https://linkedin.com/in/yourusername',
+  linkedin: 'https://linkedin.com/in/jesper-chang',
 
   about: [
-    '我是一名前端工程師，目前任職於網際威信，負責前端系統開發與維護。工作之餘，我也持續投入個人 SaaS 產品開發，從前端介面到後端 API 皆有實戰經驗。',
-    '在後端與自動化領域，我具備 N8N 工作流自動化、LINE Bot 與 Telegram Bot 聊天機器人開發經驗，並熟悉 OpenClaw 等工具的應用與整合。',
-    '目前正獨立開發與營運 LeadionAI SaaS 平台，從需求分析、架構設計到部署維運（Zeabur），完整掌握產品的全生命週期。',
+    '前端組長 × 獨立產品開發者。日間於網際威信主導富邦企業網銀現代化重構與上海銀行 B2B 系統交付，熟悉金融級嚴謹的資安規範與多輪測試流程；下班後獨立設計、開發並營運自家產品。',
+    '個人代表作 Leadion AI — AI 驅動數位行銷 SaaS，整合 Google Gemini / Veo3、自建影片佇列與 API Key Pool 支撐 60 並發、串接 3 家金流，4 國市場上線。',
+    '另一個個人作品「整知道（ScreenIdea）」已上架 App Store 並持續維運 — Next.js 16 + Capacitor 跨平台架構、Gemini 自動萃取截圖知識點、間隔重複學習機制，對標 Readwise / RemNote。從 iOS IAP 訂閱、APNS 推播到 Sentry 監控全鏈路自己跑通。',
+    '技術棧涵蓋 Angular / Vue 3 / React / Next.js（前端）、Node.js / Express / Prisma（後端）、Google Gemini / N8N（AI & 自動化）、Capacitor / Xcode / Android SDK（行動端），習慣異步溝通與書面決策，遠端友善。',
   ],
 
   experience: [
@@ -29,6 +30,22 @@ export const resumeData = {
         '開發/測試/生產三環境自動部署（Zeabur + Git Push 觸發），Redis 快取、JWT 認證、AI 智能調度',
       ],
       techs: ['Vue 3', 'TypeScript', 'Pinia', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Google Gemini', 'Veo3', 'N8N', 'Zeabur'],
+    },
+    {
+      company: '整知道 ScreenIdea',
+      url: '#',
+      role: '獨立開發者 — 截圖知識管理 iOS App',
+      period: '2025 — 現在',
+      highlights: [
+        '已上架 App Store 並持續維運的個人作品：截圖 → Gemini AI 萃取知識點 → 間隔重複學習，對標 Readwise / RemNote / Cubox / Anki',
+        'Next.js 16 + React 19 + Capacitor 8 跨平台架構，iOS / Android / Web 同源，行動端含相機、推播、Haptics、Status Bar 原生整合',
+        '整合 Apple App Store Server Library + APNS2 完成 IAP 訂閱與原生推播，串通完整商業化鏈路',
+        '後端 Prisma 7 + Neon Postgres serverless、NextAuth 認證、AWS S3 圖片儲存、Sentry 錯誤監控',
+        '產品涵蓋截圖管理、筆記、書籤、閱讀清單、時間軸、知識圖譜、主題分類、訂閱定價等 12+ 模組',
+        '工程實踐：Vitest + Playwright + MSW 測試覆蓋、Husky pre-commit、TypeScript strict 模式',
+        '視覺設計刻意脫離藍紫色 sans-serif 競品紅海，採 Editorial / Magazine 風格（Fraunces serif + 墨綠暖金）',
+      ],
+      techs: ['Next.js 16', 'React 19', 'TypeScript', 'Capacitor', 'iOS', 'Android', 'Prisma', 'Neon Postgres', 'Google Gemini', 'NextAuth', 'AWS S3', 'Sentry'],
     },
     {
       company: '網際威信',
@@ -70,12 +87,17 @@ export const resumeData = {
     {
       category: 'AI / 自動化',
       icon: 'cpu',
-      skills: ['Google Gemini', 'N8N', 'LINE Bot', 'Telegram Bot', 'OpenClaw'],
+      skills: ['Google Gemini', 'Veo3', 'N8N', 'LINE Bot', 'Telegram Bot', 'OpenClaw'],
+    },
+    {
+      category: '行動端 / 跨平台',
+      icon: 'smartphone',
+      skills: ['Capacitor', 'Apache Cordova', 'iOS (Xcode)', 'Android SDK', 'APNS Push', 'App Store IAP'],
     },
     {
       category: 'DevOps',
       icon: 'cloud',
-      skills: ['Docker', 'Git', 'Zeabur'],
+      skills: ['Docker', 'Git', 'Zeabur', 'Sentry', 'Husky'],
     },
   ],
 

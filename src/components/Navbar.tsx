@@ -58,7 +58,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/Resume-/resume.pdf"
+              href="?print=en"
               className="px-4 py-2 border border-[var(--color-green)] text-[var(--color-green)] rounded text-[13px] hover:bg-[var(--color-green-tint)] transition-all"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
@@ -106,7 +106,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/Resume-/resume.pdf"
+              href="?print=en"
               className="mt-4 px-8 py-3 border border-[var(--color-green)] text-[var(--color-green)] rounded text-sm hover:bg-[var(--color-green-tint)] transition-all"
               style={{ fontFamily: 'var(--font-mono)' }}
             >

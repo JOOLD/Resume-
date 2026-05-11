@@ -9,8 +9,14 @@ import Contact from './components/Contact'
 import SideElements from './components/SideElements'
 import Footer from './components/Footer'
 import ParticleNetwork from './components/ParticleNetwork'
+import PrintResume from './components/PrintResume'
 
 function App() {
+  const params = new URLSearchParams(window.location.search)
+  if (params.get('print') === 'en') {
+    return <PrintResume />
+  }
+
   return (
     <div className="min-h-screen bg-[var(--color-navy)]">
       <ParticleNetwork />
