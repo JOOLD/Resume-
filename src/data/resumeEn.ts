@@ -10,7 +10,7 @@ export const resumeDataEn: ResumeData = {
 
   about: [
     'Frontend Lead by day, indie SaaS builder by night. At Geotrust Inc. I own the modernization rewrite of Fubon Bank enterprise online banking and delivered Bank of Shanghai B2B Phase 2 — banking-grade security cadence and multi-stage QA. After hours I solo-design, ship and operate my own products.',
-    'Flagship: Leadion AI — an AI-driven digital marketing SaaS integrating Google Gemini + Veo3 with a custom video queue and API Key Pool sustaining 60 concurrent jobs. Three payment gateways, credit-based billing, live in 4 markets.',
+    'Flagship: Leadion AI — an AI-driven digital marketing SaaS integrating Google Gemini + Veo3 with a custom video queue and API Key Pool sustaining 60 concurrent jobs. NewebPay payment integration, credit-based billing, live in 4 markets.',
     'Second product: ScreenIdea (整知道) — a screenshot-to-knowledge app live on the App Store. Next.js 16 + Capacitor 8 cross-platform (iOS / Android / Web from one codebase), Gemini-powered knowledge extraction with spaced-repetition learning. Wired Apple IAP + APNS2 push end-to-end myself.',
     'Stack: Angular / Vue 3 / React / Next.js (frontend), Node.js / Express / Prisma (backend), Google Gemini / N8N (AI & automation), Capacitor / Xcode / Android SDK (mobile). Async-fluent, written-decision oriented, remote-ready.',
   ],
@@ -29,7 +29,7 @@ export const resumeDataEn: ResumeData = {
         'Integrated Google Gemini + Veo3 to ship an AI e-commerce toolkit: background removal, scene generation, copywriting, image enhancement, scene recommendation, video generation',
         'Built custom video queue (priority, cancellation, rate-limiting) + Gemini API Key Pool with round-robin sustaining 60 concurrent jobs',
         'Integrated N8N automation + Python analytics pipeline with GA4 & Search Console to produce SEO optimization reports',
-        'Integrated three payment gateways (ECPay / PayNow / NewebPay) with a credit-based billing system',
+        'Integrated NewebPay payment gateway with credit-based billing (credit card, convenience store code, ATM transfer)',
         'Built full admin platform — user management, cost analytics, usage stats, error reports, promo codes, persona library',
         'Three-environment auto-deploy on Zeabur (dev / staging / prod), Redis caching, JWT auth, AI orchestration',
       ],
@@ -118,7 +118,7 @@ export const resumeDataEn: ResumeData = {
       { value: 35, suffix: '+', label: 'API Routes' },
       { value: 60, suffix: '', label: 'Concurrent' },
       { value: 4, suffix: '', label: 'Markets' },
-      { value: 3, suffix: '', label: 'Gateways' },
+      { value: 6, suffix: '+', label: 'AI Tools' },
     ],
     techs: ['Vue 3', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Google Gemini', 'N8N', 'Zeabur'],
   },

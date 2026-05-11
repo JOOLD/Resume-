@@ -10,7 +10,7 @@ export const resumeData: ResumeData = {
 
   about: [
     '前端組長 × 獨立產品開發者。日間於網際威信主導富邦企業網銀現代化重構與上海銀行 B2B 系統交付，熟悉金融級嚴謹的資安規範與多輪測試流程；下班後獨立設計、開發並營運自家產品。',
-    '個人代表作 Leadion AI — AI 驅動數位行銷 SaaS,整合 Google Gemini / Veo3、自建影片佇列與 API Key Pool 支撐 60 並發、串接 3 家金流,4 國市場上線。',
+    '個人代表作 Leadion AI — AI 驅動數位行銷 SaaS,整合 Google Gemini / Veo3、自建影片佇列與 API Key Pool 支撐 60 並發、串接藍新 NewebPay 金流,4 國市場上線。',
     '另一個個人作品「整知道（ScreenIdea）」已上架 App Store 並持續維運 — Next.js 16 + Capacitor 跨平台架構、Gemini 自動萃取截圖知識點、間隔重複學習機制,對標 Readwise / RemNote。從 iOS IAP 訂閱、APNS 推播到 Sentry 監控全鏈路自己跑通。',
     '技術棧涵蓋 Angular / Vue 3 / React / Next.js（前端）、Node.js / Express / Prisma（後端）、Google Gemini / N8N（AI & 自動化）、Capacitor / Xcode / Android SDK（行動端）,習慣異步溝通與書面決策,遠端友善。',
   ],
@@ -29,7 +29,7 @@ export const resumeData: ResumeData = {
         '整合 Google Gemini / Veo3 開發 AI 電商工具套件:商品去背、背景生成、文案生成、圖片增強、場景推薦、影片生成',
         '自建影片隊列管理系統（排隊、優先處理、取消、速率限制）,搭配 Gemini API Key Pool + Round-Robin 支撐 60 並發',
         '串接 N8N 自動化引擎 + Python 分析管道,整合 GA4 & Search Console 產出 SEO 優化報告',
-        '同時整合綠界 ECPay、PayNow、藍新 NewebPay 三家金流,實作點數制計費系統',
+        '串接藍新 NewebPay 金流,實作點數制計費系統(信用卡、超商代碼、銀行 ATM 多支付方式)',
         '建置完整管理後台:用戶管理、成本分析、使用量統計、錯誤報告、促銷碼與人格庫管理',
         '開發/測試/生產三環境自動部署（Zeabur + Git Push 觸發）,Redis 快取、JWT 認證、AI 智能調度',
       ],
@@ -118,7 +118,7 @@ export const resumeData: ResumeData = {
       { value: 35, suffix: '+', label: 'API 路由' },
       { value: 60, suffix: '', label: '並發支援' },
       { value: 4, suffix: '', label: '國市場' },
-      { value: 3, suffix: '', label: '家金流' },
+      { value: 6, suffix: '+', label: 'AI 工具' },
     ],
     techs: ['Vue 3', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Google Gemini', 'N8N', 'Zeabur'],
   },
