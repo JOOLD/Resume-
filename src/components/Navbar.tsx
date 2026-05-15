@@ -3,6 +3,7 @@ import { useLang } from '../i18n/LangContext'
 
 export default function Navbar() {
   const { lang, setLang, t } = useLang()
+  const resumePdfHref = `${import.meta.env.BASE_URL}resume-${lang}.html`
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [lastY, setLastY] = useState(0)
@@ -63,6 +64,16 @@ export default function Navbar() {
             >
               {t.ui.langToggleOther}
             </button>
+
+            <a
+              href={resumePdfHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 border border-[var(--color-green)] text-[var(--color-green)] rounded text-[12px] hover:bg-[var(--color-green-tint)] transition-all"
+              style={{ fontFamily: 'var(--font-mono)' }}
+            >
+              {t.ui.navResumeCta}
+            </a>
           </div>
 
           <button
@@ -115,6 +126,16 @@ export default function Navbar() {
             >
               {t.ui.langToggleOther}
             </button>
+            <a
+              href={resumePdfHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="px-8 py-3 border border-[var(--color-green)] text-[var(--color-green)] rounded text-sm hover:bg-[var(--color-green-tint)] transition-all"
+              style={{ fontFamily: 'var(--font-mono)' }}
+            >
+              {t.ui.navResumeCta}
+            </a>
           </aside>
         </div>
       )}

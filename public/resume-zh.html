@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>張哲銓 — 履歷 (PDF)</title>
+    <meta name="description" content="ATS 友善的中文履歷，瀏覽器列印另存為 PDF 即可使用。" />
+    <style>
+      :root {
+        --ink: #111;
+        --muted: #555;
+        --rule: #cfcfcf;
+        --accent: #0a4d8c;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: 'Noto Sans TC', 'PingFang TC', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.55;
+        color: var(--ink);
+        background: #f4f4f4;
+      }
+      .page {
+        max-width: 800px;
+        margin: 24px auto;
+        background: #fff;
+        padding: 28px 36px 32px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
+      header h1 {
+        font-size: 22pt;
+        margin: 0 0 2px;
+        letter-spacing: 1px;
+      }
+      header .subtitle {
+        font-size: 11pt;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      header .contact {
+        font-size: 9.5pt;
+        color: var(--muted);
+      }
+      header .contact a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      header .contact a:hover { text-decoration: underline; }
+      header .contact span + span::before {
+        content: ' · ';
+        color: var(--rule);
+      }
+      hr.rule {
+        border: 0;
+        border-top: 1px solid var(--rule);
+        margin: 10px 0 8px;
+      }
+      section { margin-top: 10px; }
+      h2 {
+        font-size: 11pt;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin: 0 0 6px;
+        padding-bottom: 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      p { margin: 0 0 6px; }
+      .summary { margin: 0; }
+      .job, .project, .edu { margin-bottom: 8px; }
+      .job-head, .project-head, .edu-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .job-head .left, .project-head .left, .edu-head .left {
+        font-weight: 600;
+      }
+      .job-head .right, .project-head .right, .edu-head .right {
+        font-size: 9.5pt;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .role {
+        font-style: italic;
+        color: var(--muted);
+        font-size: 10pt;
+        margin: 0 0 3px;
+      }
+      ul {
+        margin: 2px 0 4px;
+        padding-left: 20px;
+      }
+      ul li { margin-bottom: 2px; }
+      .techs {
+        font-size: 9.5pt;
+        color: var(--muted);
+      }
+      .techs strong { color: var(--ink); font-weight: 600; }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3px;
+      }
+      .skills-grid .row {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        column-gap: 10px;
+      }
+      .skills-grid .label { font-weight: 600; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .hint {
+        max-width: 800px;
+        margin: 12px auto 0;
+        padding: 10px 14px;
+        background: #fffbe6;
+        border: 1px solid #f3d27a;
+        border-radius: 6px;
+        font-size: 10pt;
+        color: #6b5b00;
+      }
+      .hint b { color: #4a3f00; }
+      .hint kbd {
+        display: inline-block;
+        padding: 1px 6px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #f7f7f7;
+        font-family: inherit;
+        font-size: 9.5pt;
+      }
+
+      @media print {
+        body { background: #fff; }
+        .page {
+          margin: 0;
+          box-shadow: none;
+          max-width: none;
+          padding: 14mm 14mm 14mm;
+        }
+        .hint { display: none; }
+        @page { size: A4; margin: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hint">
+      <b>另存為 PDF：</b>按 <kbd>⌘ + P</kbd>（Mac）或 <kbd>Ctrl + P</kbd>，選擇「<b>另存為 PDF</b>」，邊界設為「<b>預設</b>」，取消勾選「<b>頁首與頁尾</b>」。輸出的 PDF 文字可選取，可通過 ATS 自動解析。
+    </div>
+
+    <div class="page">
+      <header>
+        <h1>張哲銓 <span style="font-size:13pt;color:var(--muted);font-weight:400">Jesper Chang</span></h1>
+        <div class="subtitle">前端組長 × 獨立 SaaS 開發者 · 接受遠端工作</div>
+        <div class="contact">
+          <span>台中, 台灣</span>
+          <span><a href="mailto:h7110231@gmail.com">h7110231@gmail.com</a></span>
+          <span><a href="https://linkedin.com/in/jesper-chang">linkedin.com/in/jesper-chang</a></span>
+          <span><a href="https://joold.github.io/Resume-/">joold.github.io/Resume-/</a></span>
+          <span><a href="https://github.com/JOOLD">github.com/JOOLD</a></span>
+        </div>
+      </header>
+
+      <hr class="rule" />
+
+      <section>
+        <h2>自我介紹</h2>
+        <p class="summary">
+          前端組長 × 獨立產品開發者。日間於網際威信主導富邦企業網銀現代化重構與上海銀行 B2B 二階段交付，熟悉金融級資安規範與多輪測試流程；下班後獨立設計、開發並營運兩個產品。習慣異步溝通與書面決策，遠端友善。
+        </p>
+      </section>
+
+      <section>
+        <h2>個人代表作</h2>
+
+        <div class="project">
+          <div class="project-head">
+            <div class="left">Leadion AI — AI 驅動數位行銷 SaaS</div>
+            <div class="right">營運中 · 4 國市場</div>
+          </div>
+          <p class="role"><a href="https://leadionai.zeabur.app/">leadionai.zeabur.app</a> — 獨立開發</p>
+          <ul>
+            <li>Vue 3 + TypeScript 前端（27 頁面 / 50+ 元件），Node.js + Express + PostgreSQL 後端（35+ 路由 / 60+ 服務）。</li>
+            <li>整合 Google Gemini + Veo3 開發 AI 電商工具套件：去背、場景生成、文案、圖片增強、場景推薦、影片生成。</li>
+            <li>自建影片佇列（優先序、取消、限速）+ Gemini API Key Pool Round-Robin 支撐 60 並發。</li>
+            <li>串接藍新 NewebPay 金流並實作點數制計費（信用卡 / 超商代碼 / ATM 轉帳）。</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-head">
+            <div class="left">整知道 ScreenIdea — 截圖知識管理跨平台 App</div>
+            <div class="right">已上架 App Store</div>
+          </div>
+          <p class="role"><a href="https://apps.apple.com/tw/app/integrate-know/id6760764603">apps.apple.com · id6760764603</a> — 獨立開發</p>
+          <ul>
+            <li>Next.js 16 + React 19 + Capacitor 8 同源跨平台，iOS / Android / Web；含相機、推播、Haptics、Status Bar 原生整合。</li>
+            <li>串通 Apple In-App Purchase + App Store Server Library + APNS2，真實訂閱金流上線中。</li>
+            <li>Prisma 7 + Neon Postgres serverless、NextAuth、AWS S3 圖片儲存、Sentry 監控；Vitest + Playwright + MSW 測試覆蓋。</li>
+            <li>採 Editorial / Magazine 風格（Fraunces serif + 墨綠暖金）刻意脫離藍紫色 sans-serif 競品紅海。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>工作經歷</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="left">網際威信 Geotrust Inc.</div>
+            <div class="right">2023/06 — 現在</div>
+          </div>
+          <p class="role">前端組長</p>
+          <ul>
+            <li>主導富邦企業網銀前端現代化重構，XML 混合式架構全面遷移至 Angular + TypeScript，負責畫面開發與後端 API 串接。</li>
+            <li>擔任 10 人開發團隊前端小組長，帶領 2 名組員，負責任務分配、Code Review 與進度控管。</li>
+            <li>獨立完成上海銀行 B2B 系統二階段功能開發，接手既有程式碼並交付新功能模組。</li>
+            <li>於金融級資安規範與多輪測試流程下交付產品。</li>
+          </ul>
+          <p class="techs"><strong>技術棧：</strong>Angular、TypeScript、RxJS、HTML、CSS/SCSS</p>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="left">Leadion AI — 創辦人</div>
+            <div class="right">2024 — 現在</div>
+          </div>
+          <p class="role">AI 驅動數位行銷 SaaS（下班獨立開發 / 並行）</p>
+          <p class="techs"><strong>技術棧：</strong>Vue 3、TypeScript、Pinia、Node.js、Express、PostgreSQL、Redis、Google Gemini、Veo3、N8N、Zeabur。<em>細節見上方「個人代表作」。</em></p>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="left">整知道 ScreenIdea — 創辦人</div>
+            <div class="right">2025 — 現在</div>
+          </div>
+          <p class="role">跨平台知識管理 App（下班獨立開發 / 並行）</p>
+          <p class="techs"><strong>技術棧：</strong>Next.js 16、React 19、TypeScript、Capacitor、iOS、Android、Prisma、Neon Postgres、Google Gemini、NextAuth、AWS S3、Sentry。<em>細節見上方「個人代表作」。</em></p>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="left">帆晴股份有限公司</div>
+            <div class="right">2022 — 2023/01</div>
+          </div>
+          <p class="role">北區廣告 PM</p>
+          <ul>
+            <li>成功洽談吳淡如 Podcast 合作案，為廠商開拓新媒體曝光管道。</li>
+            <li>搶下中租集團網路投放廣告廠商資格，拓展重要企業客戶關係。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>技術能力</h2>
+        <div class="skills-grid">
+          <div class="row"><div class="label">前端</div><div>Vue 3、Angular、React、Next.js、TypeScript、JavaScript (ES6+)、Pinia、RxJS、Tailwind CSS、HTML &amp; CSS/SCSS</div></div>
+          <div class="row"><div class="label">後端</div><div>Node.js、Express、PostgreSQL、Redis、REST API Design、Prisma、NextAuth</div></div>
+          <div class="row"><div class="label">AI / 自動化</div><div>Google Gemini、Veo3、N8N、LINE Bot、Telegram Bot、OpenClaw</div></div>
+          <div class="row"><div class="label">行動端 / 跨平台</div><div>Capacitor、Apache Cordova、iOS (Xcode)、Android SDK、APNS Push、App Store IAP、App Store Server Library</div></div>
+          <div class="row"><div class="label">DevOps</div><div>Docker、Git、Zeabur、Sentry、Husky、Vitest、Playwright、MSW</div></div>
+          <div class="row"><div class="label">語言</div><div>中文（母語）、英文（職場使用）</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>學習歷程</h2>
+        <div class="edu">
+          <div class="edu-head">
+            <div class="left">資策會</div>
+            <div class="right">2023/01 — 2023/06</div>
+          </div>
+          <p class="role">前端與後端開發培訓課程</p>
+          <p style="margin:0">為期半年的密集培訓，每日下午至晚間於圖書室自學精進技術。</p>
+        </div>
+        <div class="edu">
+          <div class="edu-head">
+            <div class="left">持續自學中</div>
+            <div class="right">2023 — 現在</div>
+          </div>
+          <p class="role">AI 工具與自動化技術</p>
+          <p style="margin:0">下班期間持續學習 OpenClaw 架設、Vibe Coding 等 AI 輔助開發技能。</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

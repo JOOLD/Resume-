@@ -163,7 +163,7 @@ export const resumeData: ResumeData = {
       { num: '04.', label: '技能', href: '#skills' },
       { num: '05.', label: '聯繫', href: '#contact' },
     ],
-    navResumeCta: '英文履歷',
+    navResumeCta: '履歷 PDF',
     langToggleOther: 'EN',
     langToggleAriaLabel: '切換為英文',
   },
